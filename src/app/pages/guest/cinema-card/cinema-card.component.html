@@ -1,0 +1,15 @@
+<div class="pelicula-card">
+  
+    <div style=" padding: 13px;">
+     
+      <div class="row ">
+        <h3>{{  cinema?.cinemaName | titlecase }}</h3>
+        <p>{{  cinema?.stateName }}, {{  cinema?.countryName }}</p>
+        <p>{{  cinema?.primaryAddress }}</p>
+        <hr>
+        <p>{{  cinema?.phoneNumber ?? "" | mask: '(000) 000-0000'}}</p>
+        <p>{{  cinema?.email }}</p>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,63 @@
+<div class="header">
+    <h2>Gestión y Manejo de Asignación de Peliculas </h2>
+  </div>
+  
+  <div class="row d-flex align-items-center justify-content-end">
+    <div class="col-md-4 mt-2 text-start d-flex d-grid">
+      <div class="buttons">
+        <button class="add-button d-flex justify-content-center align-items-center"
+          (click)="openMovieDialog(null,modalEnums.Insert)">
+          Agregar Nueva
+          <i class="material-icons">add</i>
+        </button>
+  
+      </div>
+    </div>
+    <div class="col-md-8 ">
+      <app-searcher [searchOptions]="searchOptions" [list]="movies"
+        (listFilteredOutput)="changeListForSearch($event)"></app-searcher>
+    </div>
+  </div>
+  <div class="movies-table-container">
+    <table class="movies-table">
+      <thead>
+        <tr>
+          <th class="text-center">Acciones</th>
+          <th class="text-center">No. Secuencia</th>
+          <th>Pelicula</th>
+          <th>Cine</th>
+          <th>Sala</th>
+          <th>Precio por Asiento</th>
+          <th>Fecha de Exhibición</th>
+          <th>Hora de Exhibición</th>
+          <th>Fecha de Registro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of moviesFiltered">
+          <td class="text-center">
+            <button (click)="openMovieDialog(movie,modalEnums.View)" class="text-info" data-bs-toggle="tooltip"
+              data-toggle="tooltip" data-title="Ver" data-bs-placement="top" title="Ver">
+              <i class="fas fa-eye"></i>
+            </button>
+            <button (click)="openMovieDialog(movie,modalEnums.Update)" class="text-warning" data-bs-toggle="tooltip"
+              data-toggle="tooltip" data-title="Editar" data-bs-placement="top" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button (click)="deleteScreen(movie)" class="text-danger" data-bs-toggle="tooltip" data-toggle="tooltip"
+              data-title="Eliminar" data-bs-placement="top" title="Eliminar">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+          <td class="text-center">{{movie.movieByScreenId}}</td>
+          <td>{{ movie.movieName || 'N/A' }}</td>
+          <td>{{ movie.cinemaName || 'N/A' }}</td>
+          <td>{{ movie.screenName || 'N/A' }}</td>
+          <td>{{ (movie.priceBySeat | currency:'RD$') || 'N/A' }}</td>
+          <td>{{( movie.showingDate | date:'dd/MM/yyyy') || 'N/A' }}</td>
+          <td>{{ movie.transformedTime || 'N/A' }}</td>
+          <td>{{( movie.createdAt | date:'dd/MM/yyyy') || 'N/A' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

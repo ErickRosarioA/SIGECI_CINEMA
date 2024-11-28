@@ -1,0 +1,20 @@
+
+.top-bar {
+  color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-title {
+  font-size: 18px;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  color: #02298A;
+  cursor: pointer;
+  font-size: 16px;
+}

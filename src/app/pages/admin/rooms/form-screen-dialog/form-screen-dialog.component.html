@@ -1,0 +1,35 @@
+<!-- form-movie-dialog.component.html -->
+<h2>{{title}} Cine</h2>
+<form [formGroup]="form">
+  <div class="form-row">
+    <div class="form-column">
+      <label for="screenName">Nombre de la Sala: <span class="text-danger">*</span>  </label>
+      <input type="text" id="screenName" name="screenName" formControlName="screenName">
+
+      <label for="seats">Cantidad de Asientos: <span class="text-danger">*</span> </label>
+      <input type="text" mask="separator.0" thousandSeparator="," id="seats" name="seats" placeholder="0" formControlName="seats">
+
+      <label for="generalPriceBySeat">Precio General por Asiento: </label>
+      <input type="text" id="generalPriceBySeat" name="generalPriceBySeat" mask="separator.2" thousandSeparator="," prefix="RD$" placeholder="RD$0.00" formControlName="generalPriceBySeat">
+
+  
+    </div>
+
+    <div class="form-column">
+
+      <label for="cinema">Cine: <span class="text-danger">*</span></label>
+      <ngx-select-dropdown id="cinema" name="cinema" (change)="changeCinema()" formControlName="cinemaObject"
+        [multiple]="false" [config]="cinemaDropConfig" [options]="cinemas"></ngx-select-dropdown>
+
+
+      
+    </div>
+  </div>
+  <div class="button-container">
+    <button class="outline-button" mat-button (click)="onCancelClick()">
+        <span *ngIf="this.data.viewType != enumOperations.View">Cancelar</span>
+        <span *ngIf="this.data.viewType == enumOperations.View">Cerrar</span>
+      </button>
+      <button class="fill-button" mat-raised-button color="primary" (click)="onSaveClick()" *ngIf="this.data.viewType != enumOperations.View">Guardar</button>
+  </div>
+</form>

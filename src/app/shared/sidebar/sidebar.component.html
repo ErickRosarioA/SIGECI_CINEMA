@@ -1,0 +1,18 @@
+<div class="sidebar">
+  <div class="logo">
+    <!-- Coloca aquí tu logo o imagen -->
+    <img [src]="imagePath" alt="Logo" (click)="doNagivation('/')" style="cursor: pointer;">
+  </div>
+  <div class="menu">
+    <button routerLink="/admin/dashboard" routerLinkActive="active" ><i class="fas fa-th-large"></i>Inicio</button>
+    <button routerLink="/admin/movies" routerLinkActive="active" ><i class="fas fa-film"></i>Peliculas</button>
+    <button routerLink="/admin/cinemas" routerLinkActive="active" ><i class="fas fa-building"></i>Cines</button>
+    <button routerLink="/admin/rooms" routerLinkActive="active" ><i class="fas fa-home"></i>salas</button>
+     <button routerLink="/admin/assignment" routerLinkActive="active" ><i class="fas fa-sitemap"></i>Asignación</button>
+
+  </div>
+
+  <div id="bottom-text">
+    Cinema - SERIVICIO WEB 2
+  </div>
+</div>

@@ -1,0 +1,10 @@
+/* pelicula-list.component.css */
+.pelicula-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center; /* O cualquier otra alineación que desees */
+}
+
+.app-movie-card {
+  margin: 10px; /* Espacio entre las tarjetas */
+}

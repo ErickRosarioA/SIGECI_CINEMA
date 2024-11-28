@@ -1,0 +1,12 @@
+/* footer.component.css */
+footer {
+  text-align: center;
+  padding: 10px;
+  color: #ffffff;
+  background-image: url('../../../../assets/fondo_back.png'); 
+  background-size: cover; 
+  background-position: center center; 
+  background-attachment: fixed;
+  position: relative; 
+  width: 100%;
+}

@@ -1,0 +1,76 @@
+:host {
+  display: block;
+  position: relative;
+  height: 100vh; 
+  background-image: url('../../../assets/fondo_back.png'); 
+  background-size: cover; 
+  background-position: center center;
+  background-attachment: fixed; 
+}
+
+
+.dialog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative; 
+  z-index: 1; 
+}
+
+.dialog-card {
+  width: 600px;
+  height: 450px;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.text {
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.role-button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.role-text {
+  margin-top: 20px;
+}
+
+.outline-button {
+  background-color: transparent;
+  color: #0575e6;
+  padding-left: 50px;
+  padding-right: 50px;
+  border: 2px solid #0575e6;
+  border-radius: 20px;
+}
+
+.fill-button {
+  background-color: #0575e6;
+  color: #ffffff;
+  border: none;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 20px;
+}

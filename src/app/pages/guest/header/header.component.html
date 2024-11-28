@@ -1,0 +1,25 @@
+<!-- header.component.html -->
+<header>
+  <div class="top-bar">
+    <div class="logo-container">
+      <img [src]="imagePath" alt="Logo" routerLink="/" style="cursor: pointer;">
+    </div>
+    <div class="menu-container">
+      <ul class="menu-list">
+        <li><a routerLink="/guest/webpage" routerLinkActive="active">Cartelera</a></li>
+        <li><a routerLink="/guest/cinemas" routerLinkActive="active">Cines</a></li>
+      </ul>
+    </div>
+    <div class="admin-access">
+      <button class="outline-button" routerLink="/admin">Acceder como Administrador</button>
+    </div>
+  </div>
+  <div class="bottom-bar d-flex justify-content-center" >
+   
+      <div class="col-md-8">
+        <app-searcher [searchOptions]="searchOptions" [list]="movies" [searcherName]="'Buscador de Peliculas'"
+        (listFilteredOutput)="changeListForSearch($event)"></app-searcher>
+      </div>
+  </div>
+  <!-- <app-filter-toggle-sidebar *ngIf="filterMenuService.menuOpen$ | async"></app-filter-toggle-sidebar> -->
+</header>

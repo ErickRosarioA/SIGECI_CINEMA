@@ -1,0 +1,84 @@
+#card-container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 60%;
+  overflow: hidden;
+}
+
+.column {
+  text-align: left;
+  padding: 20px;
+}
+
+.column:first-child {
+  text-align: center;
+  margin: auto; /* Centra solo el primer div con clase .column */
+}
+
+.divider {
+  width: 100%;
+  height: 100%;
+  background-color: #7e7e7e;
+}
+
+.logo {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+form {
+  display: grid;
+  grid-gap: 15px;
+}
+
+label {
+  margin-bottom: 1px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #0575e6;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.register-text {
+  margin-top: 10px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+:host {
+  display: block;
+  position: relative;
+  height: 100vh;
+  background-image: url('../../../../assets/fondo_back.png'); 
+  background-size: cover; 
+  background-position: center center; 
+  background-attachment: fixed;
+}

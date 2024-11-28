@@ -1,0 +1,31 @@
+<div class="row align-items-end justify-content-end">
+
+    <div class="col-md-3 mb-4 " >
+        <div class="form-group">
+            <label  for="parameterInput" class="form-label ms-3">Parametros</label>
+            <select class="form-select ms-2" id="parameterInput" [(ngModel)]="selectedOption" (change)="changeOption()">
+                <option [value]="undefined" [ngValue]="undefined" disabled selected>Seleccionar uno</option>
+                <option [ngValue]="option" *ngFor="let option of searchOptions">{{option.name}}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-7 mb-4" >
+        <div class="form-group text-start">
+            <label *ngIf="!selectedOption?.isDate" for="searchInput" class="form-label ms-3">{{searcherName}}</label>
+            <input *ngIf="!selectedOption?.isDate && !selectedOption?.isMoney && !selectedOption?.isDropDown"
+                [(ngModel)]="searchKey"  id="searchInput" type="text" class="form-control" (keydown.enter)="filterList()"
+                [readonly]="!selectedOption?.name || !selectedOption?.attribute" placeholder="">
+
+
+            <select *ngIf="selectedOption?.isDropDown" class="form-select ms-2" [(ngModel)]="selectedFromNestedDrop"
+                (change)="filterList()">
+                <option [ngValue]="undefined" disabled selected>Seleccionar uno</option>
+                <option [ngValue]="option" *ngFor="let option of selectedOption?.nestedDropdown">{{option.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-2 d-grid mb-4">
+        <button type="button" class="btn btn-primary "  (click)="filterList()">Buscar</button>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+/* confirm-delete-movie-dialog.component.css */
+:host {
+    display: block;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin-bottom: 30px;
+  }
+  
+  /* Botón "No" estilo "outline" */
+  .fill-button {
+    background-color: transparent;
+    color: #0575e6;
+    border: 2px solid #0575e6;
+    border-radius: 10px;
+    padding: 5px 20px;
+    margin-left: 20px;
+    font-size: 16px;
+  }
+  
+  /* Botón "Sí" estilo "fill" */
+  .outline-button {
+    background-color: #0575e6;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 20px;
+    font-size: 16px;
+  }
+  

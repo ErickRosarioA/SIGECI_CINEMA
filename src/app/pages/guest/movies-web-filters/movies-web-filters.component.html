@@ -1,0 +1,12 @@
+<!-- movies-web-list.component.html -->
+<app-header [movies]="movies" (moviesFilteredOutput)="changeListForSearch($event)"></app-header>
+
+<div class="pelicula-list h-100 mt-5">
+  <div  *ngFor="let movie of moviesFiltered">
+    <app-movie-card [movie]="movie" (click)="openMovieDialog(movie)"></app-movie-card>
+  </div>
+
+  <p *ngIf="moviesFiltered.length == 0 && searched"><strong class="text-danger">No se han encontrado peliculas disponibles</strong></p>
+</div>
+<app-footer></app-footer>
+

@@ -1,0 +1,47 @@
+/* filter-toggle-sidebar.component.css */
+.filter-sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
+  gap: 20px;
+}
+
+.filter-column {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px; /* Espaciado entre botones */
+  margin-top: 20px;
+}
+
+button {
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin-left: 10px;
+}
+
+.outline-button {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.fill-button {
+  background-color: #ffffff;
+  color: #0575e6;
+  border: none;
+}

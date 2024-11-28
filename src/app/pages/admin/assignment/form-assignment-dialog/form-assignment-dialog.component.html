@@ -1,0 +1,41 @@
+<!-- form-movie-dialog.component.html -->
+<h2>{{title}} Película</h2>
+<form [formGroup]="form">
+  <div class="form-row">
+    <div class="form-column">
+        <label for="movie">Pelicula: <span class="text-danger">*</span></label>
+        <ngx-select-dropdown id="movie" name="movie" (change)="changeMovie()" formControlName="movieObject"
+          [multiple]="false" [config]="movieDropConfig" [options]="movies"></ngx-select-dropdown>
+
+          <label for="priceBySeat">Precio por Asiento: </label>
+          <input type="text" id="priceBySeat" name="priceBySeat" mask="separator.2" thousandSeparator="," prefix="RD$" placeholder="RD$0.00" formControlName="priceBySeat">
+
+          <label for="showingDate">Fecha de Exhibición:</label>
+          <input type="date" id="releaseDate" name="showingDate" formControlName="showingDate">
+    </div>
+
+    <div class="form-column">
+        <label for="cinema">Cine: <span class="text-danger">*</span></label>
+        <ngx-select-dropdown id="cinema" name="cinema" (change)="changeCinema()" formControlName="cinemaObject"
+          [multiple]="false" [config]="cinemaDropConfig" [options]="cinemas"></ngx-select-dropdown>
+
+        <label for="cinemaScreen">Sala: <span class="text-danger">*</span></label>
+        <ngx-select-dropdown id="cinemaScreen" name="cinemaScreen" (change)="changeCinemaScreen()" formControlName="screenObject"
+        [multiple]="false" [config]="cinemaScreenDropConfig" [options]="screens"></ngx-select-dropdown>
+
+      
+
+      <label for="showingHour">Hora de Exhibición:</label>
+      <input type="time" id="showingHour" name="showingHour" formControlName="showingHour">
+
+      
+    </div>
+  </div>
+  <div class="button-container">
+    <button class="outline-button" mat-button (click)="onCancelClick()">
+        <span *ngIf="this.data.viewType != enumOperations.View">Cancelar</span>
+        <span *ngIf="this.data.viewType == enumOperations.View">Cerrar</span>
+      </button>
+      <button class="fill-button" mat-raised-button color="primary" (click)="onSaveClick()" *ngIf="this.data.viewType != enumOperations.View">Guardar</button>
+  </div>
+</form>

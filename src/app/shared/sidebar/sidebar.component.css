@@ -1,0 +1,53 @@
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-image: url('../../../assets/fondo_back.png'); /* Ruta de la imagen */
+  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+  background-position: center center; /* Centra la imagen */
+  position: fixed; /* Asegura que la barra lateral permanezca fija */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Ajuste para alinear los elementos a la izquierda */
+  z-index: 1; /* Para asegurarse de que esté encima del contenido */
+}
+
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.menu button {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  padding: 12px; /* Ajusta el espaciado según sea necesario */
+  border: none;
+  background-color: rgba(2, 41, 138, 0.1); /* Fondo azul con opacidad */
+  color: white;
+  cursor: pointer;
+  border-radius: 5px; /* Añadido para bordes redondeados */
+  margin-bottom: 10px; /* Espaciado entre botones */
+}
+
+.menu button.active {
+  background-color: rgba(55, 134, 241, 0.8); /* Fondo más claro para el botón activo */
+}
+
+i {
+  margin-right: 10px; /* Ajusta el espaciado entre el icono y el texto */
+}
+
+#bottom-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  padding: 10px;
+  font-size: small;
+  text-align: center;
+}

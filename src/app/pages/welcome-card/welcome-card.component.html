@@ -1,0 +1,16 @@
+<!-- inicio.component.html -->
+<div class="dialog-container">
+  <div class="dialog-card">
+    <img [src]="imagePath" alt="Logo" class="logo">
+    <h2 class="title">Bienvenido al Sistema Unificado de Gestión de Cines (SIGECI)</h2>
+    <p class="text">Por favor indicar la modalidad en la que va acceder al sistema:</p>
+    <div class="buttons">
+      <button [class.outline-button]="isCustomerButtonOutline" [class.fill-button]="!isCustomerButtonOutline" class="role-button" (click)="goCustomerModule()">Cliente</button>
+      <button [class.outline-button]="!isCustomerButtonOutline" [class.fill-button]="isCustomerButtonOutline" class="role-button" (click)="goAdminModule()">Administrador</button>
+    </div>
+    <p class="role-text">SIGECI, busca mejorar la gestión de las carteleras de cines en
+      República Dominicana por parte de la Dirección General de Cine.</p>
+     
+  </div>
+</div>
+

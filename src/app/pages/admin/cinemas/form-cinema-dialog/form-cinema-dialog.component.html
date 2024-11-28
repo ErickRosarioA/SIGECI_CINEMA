@@ -1,0 +1,40 @@
+<!-- form-movie-dialog.component.html -->
+<h2>{{title}} Cine</h2>
+<form [formGroup]="form">
+  <div class="form-row">
+    <div class="form-column">
+      <label for="cinemaName">Nombre: <span class="text-danger">*</span></label>
+      <input type="text" id="cinemaName" name="cinemaName" formControlName="cinemaName">
+
+      <label for="phoneNumber">Telefono: </label>
+      <input type="text" id="phoneNumber" name="phoneNumber" formControlName="phoneNumber" mask="(000) 000-0000">
+
+      <label for="title">Email: </label>
+      <input type="email" id="email" name="email" formControlName="email">
+
+  
+    </div>
+
+    <div class="form-column">
+      <label for="address">Dirección Primaria:</label>
+      <input type="text" id="address" name="address" formControlName="primaryAddress">
+
+      <label for="country">País: <span class="text-danger">*</span></label>
+      <ngx-select-dropdown id="country" name="country" (change)="changeCountry()" formControlName="countryObject"
+        [multiple]="false" [config]="countryDropConfig" [options]="countries"></ngx-select-dropdown>
+
+      <label for="countryState">Provincia: <span class="text-danger">*</span></label>
+      <ngx-select-dropdown id="countryState" name="countryState" (change)="changeCountryState()" formControlName="countryStateObject"
+        [multiple]="false" [config]="countryStateDropConfig" [options]="countryStates"></ngx-select-dropdown>
+
+      
+    </div>
+  </div>
+  <div class="button-container">
+    <button class="outline-button" mat-button (click)="onCancelClick()">
+      <span *ngIf="this.data.viewType != enumOperations.View">Cancelar</span>
+      <span *ngIf="this.data.viewType == enumOperations.View">Cerrar</span>
+    </button>
+    <button class="fill-button" mat-raised-button color="primary" (click)="onSaveClick()" *ngIf="this.data.viewType != enumOperations.View">Guardar</button>
+  </div>
+</form>

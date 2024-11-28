@@ -1,0 +1,53 @@
+<!-- form-movie-dialog.component.html -->
+<h2>{{title}} Película</h2>
+<form [formGroup]="form">
+  <div class="form-row">
+    <div class="form-column">
+      <label for="title">Título: <span class="text-danger">*</span></label>
+      <input type="text" id="title" name="title" formControlName="movieName">
+
+      <label for="genre">Género:</label>
+      <ngx-select-dropdown id="genre" name="genre" (change)="changeGender()" formControlName="genderObject"
+        [multiple]="false" [config]="gendersDropConfig" [options]="genders"></ngx-select-dropdown>
+
+      <label for="classification">Clasificación:</label>
+      <ngx-select-dropdown id="classification" name="classification" (change)="changeClassification()" formControlName="classificationObject"
+        [multiple]="false" [config]="classifiDropConfig" [options]="classifications"></ngx-select-dropdown>
+
+      <label for="synopsis">Sinopsis:</label>
+      <textarea id="synopsis" name="synopsis" formControlName="synopsis" rows="5"></textarea>
+
+  
+    </div>
+
+    <div class="form-column">
+      <label for="director">Director:</label>
+      <input type="text" id="director" name="director" formControlName="directorName">
+      <!-- 
+      <label for="protagonists">Protagonistas:</label>
+      <input type="text" id="protagonists" name="protagonists" [(ngModel)]="movie.protagonists" required
+        [attr.disabled]="readonly ? true : null"> -->
+
+      <label for="releaseDate">Fecha de Estreno:</label>
+      <input type="date" id="releaseDate" name="releaseDate" formControlName="releaseDate">
+
+      <label for="releaseHour">Hora de Estreno:</label>
+      <input type="time" id="releaseHour" name="releaseHour" formControlName="releaseHour">
+
+      <label for="coverImage">Portada:</label>
+      <div class="img-container text-center d-flex justify-content-center mb-2">
+        <img [src]="imageUrl" id="my-image" onerror="this.error=null; this.src='/assets/no-image.png'">
+      </div>
+      <!-- <input type="text" id="coverImage" name="coverImage" [(ngModel)]="movie.coverImage"
+        placeholder="URL de la imagen"> -->
+      <input *ngIf="this.data.viewType != enumOperations.View" type="file" id="fileInput" accept="image/*" (change)="handleFileInput($event)">
+    </div>
+  </div>
+  <div class="button-container">
+    <button class="outline-button" mat-button (click)="onCancelClick()">
+      <span *ngIf="this.data.viewType != enumOperations.View">Cancelar</span>
+      <span *ngIf="this.data.viewType == enumOperations.View">Cerrar</span>
+    </button>
+    <button class="fill-button" mat-raised-button color="primary" (click)="onSaveClick()" *ngIf="this.data.viewType != enumOperations.View">Guardar</button>
+  </div>
+</form>

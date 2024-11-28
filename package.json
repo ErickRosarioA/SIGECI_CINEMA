@@ -1,0 +1,50 @@
+{
+  "name": "cinema-frontend",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --configuration production && mv dist/cinema-frontend _static",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^18.2.8",
+    "@angular/cdk": "^15.2.9",
+    "@angular/common": "^18.2.8",
+    "@angular/compiler": "^18.2.8",
+    "@angular/core": "^18.2.8",
+    "@angular/forms": "^18.2.8",
+    "@angular/material": "^15.2.9",
+    "@angular/platform-browser": "^18.2.8",
+    "@angular/platform-browser-dynamic": "^18.2.8",
+    "@angular/router": "^18.2.8",
+    "@auth0/angular-jwt": "^5.2.0",
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "@types/jquery": "^3.5.29",
+    "bootstrap": "^5.3.2",
+    "jquery": "^3.7.1",
+    "ngx-mask": "^15.2.1",
+    "ngx-select-dropdown": "^3.3.1",
+    "ngx-spinner": "^15.0.1",
+    "ngx-toastr": "^16.2.0",
+    "rxjs": "~7.8.0",
+    "sweetalert2": "^11.6.13",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.10"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.9",
+    "@angular/cli": "~18.2.9",
+    "@angular/compiler-cli": "^18.2.8",
+    "@types/jasmine": "~4.3.0",
+    "jasmine-core": "~4.5.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "typescript": "~5.4.5"
+  }
+}

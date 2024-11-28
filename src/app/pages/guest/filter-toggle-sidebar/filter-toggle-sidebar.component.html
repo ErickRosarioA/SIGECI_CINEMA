@@ -1,0 +1,42 @@
+<!-- filter-toggle-sidebar.component.html -->
+<div class="filter-sidebar">
+  <div class="filter-options">
+    <!-- Dropdowns en dos columnas -->
+    <div class="filter-column">
+      <label for="genero">Género:</label>
+      <select id="genero" [(ngModel)]="selectedGenero">
+        <option value="" disabled selected>Selecciona un género</option>
+        <option *ngFor="let genero of generos" [value]="genero">{{ genero }}</option>
+      </select>
+    </div>
+
+    <div class="filter-column">
+      <label for="cine">Cine:</label>
+      <select id="cine" [(ngModel)]="selectedCine">
+        <option value="" disabled selected>Selecciona un cine</option>
+        <option *ngFor="let cine of cines" [value]="cine">{{ cine }}</option>
+      </select>
+    </div>
+    <div class="filter-column">
+      <label for="cine">Sala:</label>
+      <select id="cine" [(ngModel)]="selectedCine">
+        <option value="" disabled selected>Seleccionar una sala</option>
+        <option *ngFor="let cine of cines" [value]="cine">{{ cine }}</option>
+      </select>
+    </div>
+    <div class="filter-column">
+      <label for="cine">Horario:</label>
+      <select id="cine" [(ngModel)]="selectedCine">
+        <option value="" disabled selected>Selecciona un horario</option>
+        <option *ngFor="let cine of cines" [value]="cine">{{ cine }}</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- Botones uno al lado del otro -->
+  <div class="filter-buttons">
+    <button class="outline-button" (click)="limpiarFiltros()">Limpiar</button>
+    <button class="fill-button" (click)="buscar()">Buscar</button>
+  </div>
+</div>

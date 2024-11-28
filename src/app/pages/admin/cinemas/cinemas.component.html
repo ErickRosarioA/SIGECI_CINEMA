@@ -1,0 +1,63 @@
+<div class="header">
+    <h2>Gestión y Manejo de Cines</h2>
+  </div>
+  
+  <div class="row d-flex align-items-center justify-content-end">
+    <div class="col-md-4 mt-2 text-start d-flex d-grid">
+      <div class="buttons">
+        <button class="add-button d-flex justify-content-center align-items-center"
+          (click)="openMovieDialog(null,modalEnums.Insert)">
+          Agregar Nuevo
+          <i class="material-icons">add</i>
+        </button>
+  
+      </div>
+    </div>
+    <div class="col-md-8 ">
+      <app-searcher [searchOptions]="searchOptions" [list]="cinemas"
+        (listFilteredOutput)="changeListForSearch($event)"></app-searcher>
+    </div>
+  </div>
+  <div class="cinemas-table-container">
+    <table class="cinemas-table">
+      <thead>
+        <tr>
+          <th class="text-center">Acciones</th>
+          <th class="text-center">No. Secuencia</th>
+          <th>Nombre</th>
+          <th>Teléfono</th>
+          <th>Email</th>
+          <th>Dirección Primaria</th>
+          <th>Provincia</th>
+          <th>País</th>
+          <th>Fecha de Registro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cinema of cinemasFiltered">
+          <td class="text-center">
+            <button (click)="openMovieDialog(cinema,modalEnums.View)" class="text-info" data-bs-toggle="tooltip"
+              data-toggle="tooltip" data-title="Ver" data-bs-placement="top" title="Ver">
+              <i class="fas fa-eye"></i>
+            </button>
+            <button (click)="openMovieDialog(cinema,modalEnums.Update)" class="text-warning" data-bs-toggle="tooltip"
+              data-toggle="tooltip" data-title="Editar" data-bs-placement="top" title="Editar">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button (click)="deleteCinema(cinema)" class="text-danger" data-bs-toggle="tooltip" data-toggle="tooltip"
+              data-title="Eliminar" data-bs-placement="top" title="Eliminar">
+              <i class="fas fa-trash"></i>
+            </button>
+          </td>
+          <td class="text-center">{{cinema.cinemaId}}</td>
+          <td>{{ cinema.cinemaName || 'N/A' }}</td>
+          <td>{{ (cinema.phoneNumber | mask: '(000) 000-0000') || 'N/A' }}</td>
+          <td>{{ cinema.email || 'N/A' }}</td>
+          <td>{{ cinema.primaryAddress || 'N/A' }}</td>
+          <td>{{ cinema.stateName || 'N/A' }}</td>
+          <td>{{ cinema.countryName || 'N/A' }}</td>
+          <td>{{( cinema.createdAt | date:'dd/MM/yyyy') || 'N/A' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

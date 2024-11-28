@@ -1,0 +1,112 @@
+/* pelicula-list.component.css */
+.pelicula-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center; /* O cualquier otra alineación que desees */
+  }
+  
+  .app-movie-card {
+    margin: 10px; /* Espacio entre las tarjetas */
+  }
+  
+
+/* header.component.css */
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: normal;
+    padding: 20px;
+    background-color: #02298A;
+    color: #ffffff;
+  }
+  
+  .top-bar,
+  .bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo-container img {
+    max-width: 250px;
+  }
+  
+  .menu-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Alinear a la derecha */
+  }
+  
+  .menu-list {
+    list-style-type: none;
+    display: flex;
+    margin-right: 20px; /* Ajusta el espacio entre la lista y el botón */
+  }
+  
+  .menu-list li {
+    margin-right: 20px;
+  }
+  
+  .menu-list a {
+    color: #ffffff;
+    text-decoration: none; /* Quitar el subrayado */
+  }
+  
+  .menu-list a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+  }
+  
+  .menu-list a.active {
+    font-weight: bold; /* Estilo diferente para el enlace activo */
+  }
+  
+  .admin-access {
+    margin-left: auto;
+  }
+  
+  .outline-button {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .bottom-bar {
+    margin-top: 10px; /* Ajusta el espacio entre las barras */
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    padding: 5px;
+    width: 600px;
+    margin-right: 10px;
+  }
+  
+  .filter-icon {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-icon i {
+    margin-right: 5px;
+  }
+  
+  .centered-content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  

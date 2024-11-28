@@ -1,0 +1,69 @@
+<!-- detalle-pelicula.component.html -->
+<div class="container-dialog" style="min-height: 700px;">
+  <h3>{{ data?.movieName | titlecase }}</h3>
+  <button mat-icon-button class="close-button btn-danger btn" (click)="onCloseClick()">
+    <i class="fas fa-times"></i>
+  </button>
+  <div class="row mt-4">
+    <div class="col-md-4  ">
+      <div class="img-container text-center">
+        <img [src]="data?.imageUrl"  alt="{{ data?.movieName }}" onerror="this.error=null; this.src='/assets/no-image.png'">
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <p><strong>Directores:</strong> {{ data?.directorName || 'N/A' }}</p>
+      <!-- <p><strong>Autores:</strong> {{ data.autores }}</p> -->
+      <p><strong>Género:</strong> {{ data?.genderName || 'N/A' }}</p>
+      <p><strong>Clasificación:</strong> {{ data?.classificationName || 'N/A' }}</p>
+      <!-- Agrega más información según tus necesidades -->
+      <p><strong>Sinopsis:</strong> </p>
+      <p>
+        {{ data?.synopsis }}
+      </p>
+    </div>
+  </div>
+
+  <div class="columns-container mt-4">
+    <!-- Dropdowns en una columna -->
+    <div class="dropdown-column">
+      <label for="cines">Cines Disponibles:</label>
+      <ngx-select-dropdown id="cinema" name="cinema" (change)="changeCinema()" [(ngModel)]="selectedCinema"
+          [multiple]="false" [config]="cinemaDropConfig" [options]="cinemas"></ngx-select-dropdown>
+
+    </div>
+
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-12" *ngIf="screens.length > 0; else noScreens">
+      <div class="">
+        <table class="table table-responsive table-borderless">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Sala</th>
+              <th>Hora</th>
+              <th>Precio por Asiento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let screen of screens">
+              <td>{{( screen.showingDate | date:'dd/MM/yyyy') || 'N/A' }}</td>
+              <td>{{ screen.screenName || 'N/A' }}</td>
+              <td>{{ screen.transformedTime || 'N/A' }}</td>
+              <td>{{ (screen.priceBySeat | currency:'RD$') || 'N/A' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-12">
+      <ng-template #noScreens>
+        <p *ngIf="selectedCinema?.cinemaId"><strong class="text-danger">No hay salas disponibles en este cine</strong></p>
+      </ng-template>
+    </div>
+  </div>
+
+
+</div>
