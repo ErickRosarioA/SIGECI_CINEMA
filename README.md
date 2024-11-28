@@ -68,12 +68,6 @@ El proyecto se desarrolló utilizando las siguientes tecnologías:
 
 ## Pantallas del proyecto
 
-![WELCOME DIALOG](https://github.com/user-attachments/assets/f252a072-68e9-4212-ab5a-578641cfa542)
-![LOGIN-ADMIN](https://github.com/user-attachments/assets/b32ccc32-bc0a-4b02-9687-7b9d86af254d)
-![HOME-CLIENT](https://github.com/user-attachments/assets/1ef01ffa-73e7-4695-95ff-a247cf7089f1)
-![MOVIES-ADMIN](https://github.com/user-attachments/assets/41788f59-696b-4d1b-9c4d-859eae9cfa6c)
-![DETAIL-CLIENT](https://github.com/user-attachments/assets/15651add-5e72-4b28-a8f0-f5451ac80737)
-![HOME-ADMIN](https://github.com/user-attachments/assets/77c5af2e-5800-40bc-8086-4e9f45593791)
 
 
 ## Contacto
